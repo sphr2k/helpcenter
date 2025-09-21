@@ -8,6 +8,7 @@ plugins {
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
     id("com.google.cloud.tools.jib") version "3.4.5"
+    id("com.diffplug.spotless") version "7.2.1"
 }
 
 group = "io.bootify"
@@ -57,4 +58,10 @@ tasks.withType<KotlinCompile>().configureEach {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+spotless {
+    kotlin {
+        // ktlint()
+    }
 }

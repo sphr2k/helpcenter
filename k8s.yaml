@@ -3,6 +3,8 @@ kind: ServiceAccount
 metadata:
   name: spring-app-sa
   namespace: proxy
+  annotations:
+    iam.gke.io/gcp-service-account: zsb-cockpit-api-sa@hg-a0631-zsb-cockpit-npr-b0a5.iam.gserviceaccount.com
 ---
 apiVersion: apps/v1
 kind: Deployment
