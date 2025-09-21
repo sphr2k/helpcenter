@@ -7,6 +7,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
+    id("com.google.cloud.tools.jib") version "3.4.5"
 }
 
 group = "io.bootify"
@@ -36,8 +37,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("io.awspring.cloud:spring-cloud-aws-starter-s3:3.4.0")
     implementation("com.google.cloud:spring-cloud-gcp-starter-storage:7.3.1")
-    implementation("software.amazon.awssdk:sts:2.34.0")
+    implementation(platform("software.amazon.awssdk:bom:2.33.13"))
+    implementation("software.amazon.awssdk:sts")
+    implementation("software.amazon.awssdk:s3")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
 }
 
 tasks.getByName<BootRun>("bootRun") {

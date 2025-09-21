@@ -1,0 +1,18 @@
+apiVersion: skaffold/v4beta12
+kind: Config
+metadata:
+  name: helpcenter
+build:
+  artifacts:
+    - image: ttl.sh/spring-app
+      jib:
+        fromImage: eclipse-temurin:21-jre
+#      buildpacks:
+#        builder: gcr.io/buildpacks/builder:google-24
+#        trustBuilder: true
+#        env:
+#          - GOOGLE_RUNTIME_VERSION=21
+manifests:
+  rawYaml:
+    - k8s.yaml
+

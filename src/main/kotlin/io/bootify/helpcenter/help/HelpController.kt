@@ -1,4 +1,4 @@
-package io.bootify.helpcenter.rest
+package io.bootify.helpcenter.help
 
 import io.bootify.helpcenter.help.HelpResourceProperties
 import io.bootify.helpcenter.help.ObjectStorage

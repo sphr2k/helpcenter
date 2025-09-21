@@ -6,7 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 data class HelpResourceProperties(
     val cloudProvider: CloudProvider = CloudProvider.AWS,
     val bucketName: String,
-    val bucketPrefix: String = "files/"
+    val bucketPrefix: String = "files/",
+    val signedUrlTtl: java.time.Duration = java.time.Duration.ofMinutes(5)
 )
 
 enum class CloudProvider { AWS, GCP }
